@@ -1,4 +1,5 @@
 ---
+title: Super feature
 feature_id: 0x01
 ---
 # Super feature (`0x01`)
