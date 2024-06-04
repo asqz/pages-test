@@ -20,7 +20,7 @@
           {% for p in site.html_pages %}
             <li>
               <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
-                {{ p.title }}
+                {{ p.collection }} {{ p.title }}
               </a>
             </li>
           {% endfor %}
