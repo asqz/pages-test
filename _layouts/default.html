@@ -17,7 +17,7 @@
 
       <nav class="main-nav">
         <ul>
-          {% for p in site.pages %}
+          {% for p in site.html_pages %}
             <li>
               <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
                 collection={{ p.collection }} categories={{ p.categories }} path={{ p.path}} dir={{ p.dir }} {{ p.title }}
