@@ -16,7 +16,7 @@
     <div id="main_content_wrap" class="outer">
 
       {% assign transports = site.html_pages | where: 'dir', '/transports/' %}
-      {% assign features = site.html_pages | where: 'dir', '/features/' | sort "feature_id" %}
+      {% assign features = site.html_pages | where: 'dir', '/features/' | sort: "feature_id" %}
       <nav class="main-nav">
         <ul>
           <li><a href="{{ '/' | relative_url }}">Root</a></li>
