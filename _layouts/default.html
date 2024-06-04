@@ -15,15 +15,33 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
 
+      {% assign transports = site.html_pages | where: 'dir', '/transports/' %}
+      {% assign features = site.html_pages | where: 'dir', '/features/' | sort "feature_id" %}
       <nav class="main-nav">
         <ul>
-          {% for p in site.html_pages %}
-            <li>
-              <a href="{{ p.url | relative_url }}" {% if p.url == page.url %}class="active"{% endif %}>
-                collection={{ p.collection }} categories={{ p.categories }} path={{ p.path}} dir={{ p.dir }} {{ p.title }}
-              </a>
-            </li>
-          {% endfor %}
+          <li><a href="{{ '/' | relative_url }}">Root</a></li>
+          <li>Transports
+            <ul>
+              {% for transport in transports %}
+                <li>
+                  <a href="{{ transport.url | relative_url }}" {% if transport.url == page.url %}class="active"{% endif %}>
+                    {{ transport.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>Features
+            <ul>
+              {% for feature in features %}
+                <li>
+                  <a href="{{ feature.url | relative_url }}" {% if feature.url == page.url %}class="active"{% endif %}>
+                    [{{feature.feature_id}}] {{ feature.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
         </ul>
       </nav>
 
